@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import ProjectBoard from '../components/ui/ProjectBoard';
@@ -10,9 +9,7 @@ import { supabase } from '@/integrations/supabase/client';
 
 // Function to fetch project data by access link
 const fetchProjectByAccessLink = async (accessLink: string) => {
-  // Set the access_link header for RLS policies
-  supabase.functions.setAuthHeader(accessLink, 'x-access-link');
-  
+  // Use custom header instead of setAuthHeader (which doesn't exist on FunctionsClient)
   const { data: project, error: projectError } = await supabase
     .from('projects')
     .select('*')
