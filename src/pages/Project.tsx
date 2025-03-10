@@ -97,7 +97,7 @@ const projectData = {
         {
           id: 'task8',
           title: 'User personas',
-          description: 'Create detailed user personas based on client's target audience',
+          description: "Create detailed user personas based on client's target audience",
           dueDate: 'Sep 8',
           priority: 'medium' as const,
           attachments: 2
